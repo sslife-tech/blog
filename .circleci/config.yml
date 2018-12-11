@@ -1,12 +1,29 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
     working_directory: &working_directory ~/workspace
-    docker: &docker
-      - image: sawadashota/hugo-firebase:1.0.2
+    docker:
+      - image: circleci/golang:1.11.2
+        environment:
+          GO111MODULE: "on"
     steps:
       - checkout
+      - restore_cache:
+          name: Restore go modules cache
+          keys:
+            - mod-{{ .Environment.COMMON_CACHE_KEY }}-{{ checksum "go.mod" }}
+      - run:
+          name: Install dependencies
+          command: go mod download
+      - run:
+          name: Install hugo
+          command: go get github.com/gohugoio/hugo
+      - save_cache:
+          name: Save go modules cache
+          key: mod-{{ .Environment.COMMON_CACHE_KEY }}-{{ checksum "go.mod" }}
+          paths:
+            - /go/pkg/mod/cache
       - run:
           name:
           command: git submodule sync
@@ -16,23 +33,38 @@ jobs:
       - run:
           name: Build
           command: HUGO_ENV=production hugo
-      - run:
-          name: Minify
-          command: html-minifier --collapse-whitespace --file-ext html --input-dir public --output-dir public
       - persist_to_workspace:
           root: .
           paths:
             - public
             - .firebaserc
             - firebase.json
+            - package.json
+            - yarn.lock
   deploy:
     working_directory: *working_directory
-    docker: *docker
+    docker:
+      - image: circleci/node:11
     steps:
       - attach_workspace:
           at: .
+      - restore_cache:
+          name: Restore yarn dependencies
+          keys:
+            - yarn-node-11-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install --production=false
+      - save_cache:
+          name: Save yarn dependencies
+          key: yarn-node-11-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Minify
+          command: yarn minify
       - deploy:
-          command: firebase deploy --only hosting --token $FIREBASE_TOKEN
+          command: yarn deploy --only hosting --token ${FIREBASE_TOKEN}
 workflows:
   version: 2
   default:

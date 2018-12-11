@@ -1,0 +1,17 @@
+{
+  "name": "sslife-tech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sslife-tech/blog",
+  "author": "Shota SAWADA <xiootas@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "minify": "html-minifier --collapse-whitespace --file-ext html --input-dir public --output-dir public",
+    "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "firebase-tools": "^6.1.2",
+    "html-minifier": "^3.5.21"
+  }
+}

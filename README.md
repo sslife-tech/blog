@@ -1,7 +1,7 @@
 SSLife Tech
 ===
 
-[![CircleCI](https://circleci.com/gh/sawadashota/sslife-tech/tree/master.svg?style=svg)](https://circleci.com/gh/sawadashota/sslife-tech/tree/master)
+[![CircleCI](https://circleci.com/gh/sslife-tech/blog/tree/master.svg?style=svg)](https://circleci.com/gh/sslife-tech/blog/tree/master)
 
 Required
 ---
