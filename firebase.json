@@ -10,15 +10,35 @@
     "trailingSlash": false,
     "redirects": [
       {
-        "source" : "blog-ss-life-tech.firebaseapp.com",
-        "destination" : "https://www.sslife.tech/",
-        "type" : 301
+        "source": "blog-ss-life-tech.firebaseapp.com",
+        "destination": "https://www.sslife.tech/",
+        "type": 301
       }
     ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=86400"
+          }
+        ]
       }
     ]
   }
