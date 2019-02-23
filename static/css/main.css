@@ -390,14 +390,3 @@ iframe {
   border-color: #337ab7;
   color: #fff;
 }
-
-@media screen and (max-width: 640px) {
-  .article-body .sns-links {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .article-body .sns-links a {
-    display: block;
-  }
-}
