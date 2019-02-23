@@ -6,7 +6,7 @@ main {
 /* Header */
 
 .global-header {
-  background: #222 no-repeat center center;
+  background: #ccc no-repeat center center;
   background-size: cover;
 }
 

@@ -16,4 +16,4 @@ hrefTargetBlank = true
     bio = "恵比寿で働くサーバーサイドエンジニア。隙きあらばGolangやってます。趣味はコーヒー、紅茶、旅行。ITツールが大好き。"
     subtitle = "しょうちゃんとしおりんのブログ"
     description = "しょうちゃんとしおりんのブログ"
-    themecolor = "#fff" # Defines the tab color in Chrome for Android.
+    themecolor = "#0288d1" # Defines the tab color in Chrome for Android.

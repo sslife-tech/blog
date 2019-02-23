@@ -1,8 +1,8 @@
 shota:
   name: "しょうちゃん"
-  avator: "/images/shota.webp"
-  bio: "恵比寿で働くサーバーサイドエンジニア。隙きあらばGolangやってます。趣味はコーヒー、紅茶、旅行。ITツールが大好き。"
+  avator: "/images/shota.20190223.jpg"
+  bio: "好きな構成はNuxt on Firebase x Go on GAEです。"
 shiori:
   name: "しおりん"
-  avator: "/images/shiori.webp"
-  bio: "渋谷のインフラお姉さん。Webシステムのアーキテクチャを妄想したり構築するのが好き。趣味はマンガと旅行。"
+  avator: "/images/shiori.20190223.jpg"
+  bio: "渋谷のインフラお姉さん。今年の目標は健康SLO 99%を目指します。"

@@ -3,7 +3,6 @@
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
-    <meta data-n-head="true" data-hid="theme-color" name="theme-color" content="#0288d1">
     <meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} - {{ end }} {{ .Site.Title }}" />
     {{ with .Site.Params.themecolor }}
     <meta name="theme-color" content="{{ . }}"/>
@@ -64,7 +63,7 @@
     <link rel="canonical" href="{{ .Site.BaseURL }}"/>
 </head>
 <body>
-<header class="global-header" style='background-image:url({{ $.Param "image" }})'>
+<header class="global-header lazyload" data-background="{{ $.Param "image" }}">
     <section class="header-text">
         <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
         {{ with .Site.Params.subtitle }}
