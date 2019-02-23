@@ -2,7 +2,7 @@
   <section class="author-info row">
     <div class="author-avatar col-md-2">
       {{ with .Site.Data.profile.shota.avator }}
-      <img alt="Author Avatar" src="{{ . }}"/>
+      <img alt="Author Avatar" class="lazyload" data-src="{{ . }}"/>
       {{ end }}
     </div>
     <div class="author-meta col-md-10">
@@ -17,7 +17,7 @@
   <section class="author-info row">
     <div class="author-avatar col-md-2">
       {{ with .Site.Data.profile.shiori.avator }}
-      <img alt="Author Avatar" src="{{ . }}"/>
+      <img alt="Author Avatar" class="lazyload" data-src="{{ . }}"/>
       {{ end }}
     </div>
     <div class="author-meta col-md-10">

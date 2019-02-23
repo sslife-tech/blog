@@ -20,7 +20,7 @@
   <section class="post">
     {{ if .Params.featured_image }}
     <section class="thumb col-md-4">
-      <img src="{{ .Params.featured_image }}" alt="Thumbnail">
+      <img class="lazyload" data-src="{{ .Params.featured_image }}" alt="Thumbnail">
     </section>
     {{ end }}
     <section class="{{ if .Params.featured_image }}col-md-8{{ end }}">

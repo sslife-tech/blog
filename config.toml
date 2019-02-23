@@ -9,7 +9,7 @@ uglyURLs = true
 hrefTargetBlank = true
 
 [params]
-    featured_image = "/images/ogp.png"
+    featured_image = "/images/ogp.jpg"
     image = "/images/bg.jpg"
     ga_api_key = "UA-106924133-1"
     # contact = "Your contact link (ex. mailto:foo@example.com)"
