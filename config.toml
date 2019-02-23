@@ -1,6 +1,6 @@
 baseurl = "https://www.sslife.tech/"
 languageCode = "ja"
-title = "SS Life Tech"
+title = "SSLife Tech"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; sslife.tech Copyright"
 theme = 'vienna'

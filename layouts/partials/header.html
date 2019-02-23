@@ -3,6 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta data-n-head="true" data-hid="theme-color" name="theme-color" content="#0288d1">
     <meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} - {{ end }} {{ .Site.Title }}" />
     {{ with .Site.Params.themecolor }}
     <meta name="theme-color" content="{{ . }}"/>
@@ -57,7 +58,6 @@
     <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/apple-touch-icon.png"/>
     <link rel="preload" href="/css/font-awesome.min.css" as="style">
     <link rel="preload" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" as="style">
-    <meta name="theme-color" content="#0288d1">
     {{ if eq .URL "/" }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}"/>
     {{ end }}
