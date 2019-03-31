@@ -21,12 +21,26 @@ Serve
 ---
 
 ```bash
-task serve
+make serve
 ```
 
 Create New Blog
 ---
 
 ```bash
-task blog-new
+make blog-new
+```
+
+Make Tasks
+---
+
+```
+$ make
+blog-new                       Create new blog
+bootstrap                      first do this
+help                           show help
+install-go                     install go dependencies
+install-yarn                   install node dependencies
+start                          serve
+sync-submodule                 download git submodule
 ```
