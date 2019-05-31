@@ -44,20 +44,20 @@ jobs:
   deploy:
     working_directory: *working_directory
     docker:
-      - image: circleci/node:11
+      - image: circleci/node:12
     steps:
       - attach_workspace:
           at: .
       - restore_cache:
           name: Restore yarn dependencies
           keys:
-            - yarn-node-11-{{ checksum "yarn.lock" }}
+            - yarn-node-12-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install --production=false
       - save_cache:
           name: Save yarn dependencies
-          key: yarn-node-11-{{ checksum "yarn.lock" }}
+          key: yarn-node-12-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
