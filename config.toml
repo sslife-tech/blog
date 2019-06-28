@@ -17,3 +17,4 @@ hrefTargetBlank = true
     subtitle = "しょうちゃんとしおりんのブログ"
     description = "しょうちゃんとしおりんのブログ"
     themecolor = "#0288d1" # Defines the tab color in Chrome for Android.
+    reCAPTCHA_site_key = "6LfVGqsUAAAAAEKXV_6DaPCJwur3YB1dbIrR2C4L"
