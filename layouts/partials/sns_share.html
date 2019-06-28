@@ -1,4 +1,4 @@
-{{ if ne .URL "/" }}
+{{ if ne .Permalink "/" }}
 {{ $title :=  printf "%s - %s" .Title .Site.Title }}
 <a href='https://twitter.com/intent/tweet?text={{ $title | safeURL }}{{ "\n" | safeURL }}{{ .Permalink | safeURL }}'
    target="_blank">
