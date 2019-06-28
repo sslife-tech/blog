@@ -16,7 +16,7 @@ blog-new: ## Create new blog
 	hugo new blog/`date +%s`.md
 
 start: ## serve
-	hugo server --buildFuture --buildDrafts
+	hugo server --buildFuture --buildDrafts -e local
 
 # https://postd.cc/auto-documented-makefile/
 help: ## show help

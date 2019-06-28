@@ -7,14 +7,13 @@ theme = 'vienna'
 enableEmoji = true
 uglyURLs = true
 hrefTargetBlank = true
+rssLimit = 10
 
 [params]
     featured_image = "/images/ogp.jpg"
     image = "/images/bg.jpg"
-    ga_api_key = "UA-106924133-1"
     # contact = "Your contact link (ex. mailto:foo@example.com)"
     # bio = ""
     subtitle = "しょうちゃんとしおりんのブログ"
     description = "しょうちゃんとしおりんのブログ"
     themecolor = "#0288d1" # Defines the tab color in Chrome for Android.
-    reCAPTCHA_site_key = "6LfVGqsUAAAAAEKXV_6DaPCJwur3YB1dbIrR2C4L"

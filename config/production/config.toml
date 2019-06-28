@@ -1,0 +1,8 @@
+baseurl = "https://www.sslife.tech/"
+
+[params]
+    ga_api_key = "UA-106924133-1"
+    reCAPTCHA_site_key = "6LfVGqsUAAAAAEKXV_6DaPCJwur3YB1dbIrR2C4L"
+
+[build]
+    command = "hugo --gc --minify"

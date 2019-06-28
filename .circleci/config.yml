@@ -4,6 +4,22 @@ orbs:
   hugo: circleci/hugo@0.3.1
 
 jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo
+    steps:
+      - checkout
+      - run:
+          name: Checkout Submodules
+          command: |
+            git submodule sync
+            git submodule update --init --recursive
+      - run: hugo -e production --minify -v
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./public
+
   deploy:
     working_directory:
     docker:
@@ -24,22 +40,16 @@ jobs:
           key: yarn-node-12-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - run:
-          name: Minify
-          command: yarn minify
       - deploy:
           command: yarn deploy --only hosting --token ${FIREBASE_TOKEN}
 
 workflows:
   default:
     jobs:
-      - hugo/build:
-          # 速度最適化のため、imgタグにsrcなどを入れていない。
-          # そのためhtml-prooferを実行するとCIが落ちるためoffにしている
-          html-proofer: false
+      - build
       - deploy:
           requires:
-            - hugo/build
+            - build
           filters:
             branches:
               only: master
