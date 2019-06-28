@@ -3,13 +3,10 @@
 # https://gist.github.com/tadashi-aikawa/da73d277a3c1ec6767ed48d1335900f3
 .PHONY: $(shell grep -E '^[a-zA-Z_-]+:' $(MAKEFILE_LIST) | sed 's/://')
 
-bootstrap: install-go install-yarn sync-submodule ## first do this
+bootstrap: install-yarn sync-submodule ## first do this
 
 install-yarn: ## install node dependencies
 	yarn install
-
-install-go: ## install go dependencies
-	go mod download
 
 sync-submodule: ## download git submodule
 	git submodule sync

@@ -1,51 +1,15 @@
 version: 2.1
 
+orbs:
+  hugo: circleci/hugo@0.3.1
+
 jobs:
-  build:
-    working_directory: &working_directory ~/workspace
-    docker:
-      - image: circleci/golang:1.12.1
-        environment:
-          GO111MODULE: "on"
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore go modules cache
-          keys:
-            - mod-{{ .Environment.COMMON_CACHE_KEY }}-{{ checksum "go.mod" }}
-      - run:
-          name: Install dependencies
-          command: go mod download
-      - run:
-          name: Install hugo
-          command: go get github.com/gohugoio/hugo
-      - save_cache:
-          name: Save go modules cache
-          key: mod-{{ .Environment.COMMON_CACHE_KEY }}-{{ checksum "go.mod" }}
-          paths:
-            - /go/pkg/mod/cache
-      - run:
-          name:
-          command: git submodule sync
-      - run:
-          name: Update submodules
-          command: git submodule update --init
-      - run:
-          name: Build
-          command: HUGO_ENV=production hugo
-      - persist_to_workspace:
-          root: .
-          paths:
-            - public
-            - .firebaserc
-            - firebase.json
-            - package.json
-            - yarn.lock
   deploy:
-    working_directory: *working_directory
+    working_directory:
     docker:
       - image: circleci/node:12
     steps:
+      - checkout
       - attach_workspace:
           at: .
       - restore_cache:
@@ -65,13 +29,17 @@ jobs:
           command: yarn minify
       - deploy:
           command: yarn deploy --only hosting --token ${FIREBASE_TOKEN}
+
 workflows:
   default:
     jobs:
-      - build
+      - hugo/build:
+          # 速度最適化のため、imgタグにsrcなどを入れていない。
+          # そのためhtml-prooferを実行するとCIが落ちるためoffにしている
+          html-proofer: false
       - deploy:
           requires:
-            - build
+            - hugo/build
           filters:
             branches:
               only: master
