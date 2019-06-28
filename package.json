@@ -7,11 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "minify": "html-minifier --collapse-whitespace --file-ext html --input-dir public --output-dir public",
     "deploy": "firebase deploy"
   },
   "devDependencies": {
-    "firebase-tools": "^7.0.2",
-    "html-minifier": "^4.0.0"
+    "firebase-tools": "^7.0.2"
   }
 }
