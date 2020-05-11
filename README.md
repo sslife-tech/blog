@@ -7,7 +7,6 @@ Required
 ---
 
 * [hugo](https://github.com/gohugoio/hugo)
-* [go-task/task](https://github.com/go-task/task)
 
 Installation
 ---
