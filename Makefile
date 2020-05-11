@@ -5,8 +5,8 @@
 
 bootstrap: install-yarn sync-submodule ## first do this
 
-install-yarn: ## install node dependencies
-	yarn install
+install: ## install node dependencies
+	npm install
 
 sync-submodule: ## download git submodule
 	git submodule sync
