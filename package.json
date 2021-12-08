@@ -11,7 +11,7 @@
     "generate:post": "node scripts/generate-post.js"
   },
   "dependencies": {
-    "@sentry/browser": "^5.27.4",
+    "@sentry/browser": "^6.16.0",
     "@sentry/tracing": "^5.27.4",
     "@zeit/next-source-maps": "0.0.3",
     "gray-matter": "^4.0.2",
