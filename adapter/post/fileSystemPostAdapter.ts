@@ -2,7 +2,7 @@ import path from "path";
 import {PostData, PostMetaData} from "~/@types";
 import fs from "fs";
 import matter, {GrayMatterFile} from "gray-matter";
-import remark from "remark";
+import {remark} from "remark";
 import externalLinks from "remark-external-links";
 import html from "remark-html";
 import {PostAdapter} from "~/adapter/post";

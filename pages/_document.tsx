@@ -1,10 +1,9 @@
 import React from "react";
 import Document, {DocumentContext, Head, Html, Main, NextScript} from 'next/document';
-import {DocumentInitialProps} from "next/dist/next-server/lib/utils";
 import {configuration} from "~/Configuration";
 
 class MyDocument extends Document {
-    static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    static async getInitialProps(ctx: DocumentContext) {
         const initialProps = await Document.getInitialProps(ctx);
         return {...initialProps};
     }
