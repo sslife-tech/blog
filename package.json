@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^7.1.1",
-    "@sentry/tracing": "^7.1.1",
+    "@sentry/tracing": "^7.5.0",
     "gray-matter": "^4.0.3",
     "next": "^12.1.6",
     "next-compose-plugins": "^2.2.1",
