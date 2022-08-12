@@ -14,7 +14,7 @@
     "@sentry/browser": "^7.1.1",
     "@sentry/tracing": "^7.1.1",
     "gray-matter": "^4.0.3",
-    "next": "^12.1.6",
+    "next": "^12.2.5",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.5.4",
     "react": "^17.0",
