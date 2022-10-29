@@ -22,7 +22,8 @@ export const SITE = {
     description: 'しょうちゃんとしおりんのブログ',
     url: 'https://www.sslife.tech',
     githubUrl: 'https://github.com/sslife-tech/blog',
-    listDrafts: true
+    listDrafts: true,
+    image: '/images/logo.png',
     // description ?
 }
 
