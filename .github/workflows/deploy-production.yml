@@ -28,5 +28,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_8785A }}'
           channelId: live
           projectId: blog-8785a
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels

@@ -3,30 +3,32 @@ import { getMonthName } from '$/utils'
 const { frontmatter: post, url } = Astro.props.post
 ---
 <div class="post-preview">
-    <div class="sm:w-20 md:w-32">
-        <div class="post-preview__date">
-            <span class="post-preview__date__day">{ new Date(post.date).getDate() }</span>
-            <span class="post-preview__date__month-n-year">{ `${getMonthName(post.date)} ${new Date(post.date).getFullYear()}` }</span>
+    <div class="flex gap-6 flex-1">
+        <div class="sm:basis-20 md:basis-32">
+            <div class="post-preview__date">
+                <span class="post-preview__date__day">{ new Date(post.date).getDate() }</span>
+                <span class="post-preview__date__month-n-year">{ `${getMonthName(post.date)} ${new Date(post.date).getFullYear()}` }</span>
+            </div>
+        </div>
+        <div class="flex-1">
+            <h4 class="post-preview__title">
+                <a href={url} title={post.title}>{post.title}</a>
+            </h4>
+            <p class="post-preview__desc">
+                {post.description}
+            </p>
         </div>
     </div>
-    <div class="flex-1">
-        <h4 class="post-preview__title">
-            <a href={url} title={post.title}>{post.title}</a>
-        </h4>
-        <p class="post-preview__desc">
-            {post.description}
-        </p>
-    </div>
-    <div class="sm:w-20 md:w-32 post-preview__image">
+    <div class="basis-full sm:basis-20 md:basis-32 h-8 sm:h-full">
         {
             post.image &&
-            <img src={post.image} alt={post.title}/>
+            <img src={post.image} alt={post.title} class="post-preview__image"/>
         }
     </div>
 </div>
 <style>
     .post-preview {
-        @apply  flex gap-6;
+        @apply  flex gap-6 flex-col sm:flex-row;
     }
     .post-preview__date {
         @apply flex flex-col w-full text-center;
@@ -44,12 +46,6 @@ const { frontmatter: post, url } = Astro.props.post
         @apply text-lg leading-6 line-clamp-2 dark:text-white;
     }
     .post-preview__image {
-        height: 100%;
-    }
-    .post-preview__image img {
-       object-fit: cover;
-       width: 100%;
-       height: 100%;
-       border-radius: 8px;
+       @apply h-60 sm:h-full w-full object-cover sm:object-cover rounded-lg;
     }
 </style>
