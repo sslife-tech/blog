@@ -2,7 +2,7 @@
 layout: $/layouts/post.astro
 title: "UniFi Protect G4 Doorbellを導入しました"
 description: "UniFiのドアホンを取り寄せて設置したり、APIで遊んでみました。"
-tags: ["UniFi", "自宅環境"]
+tags: ["UniFi"]
 author: Shota
 authorTwitter: xioota
 image: /images/posts/doorbell_01.jpg
