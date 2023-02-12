@@ -4,7 +4,7 @@ const ULID = require('ulid');
 const path = require('path');
 const fs = require('fs');
 
-const postsDirectory = path.join(process.cwd(), 'markdown');
+const postsDirectory = path.join(process.cwd(), 'src/pages/blog');
 
 /**
  *
@@ -12,10 +12,12 @@ const postsDirectory = path.join(process.cwd(), 'markdown');
  * @returns {string}
  */
 const template = (date = new Date) => `---
+layout: $/layouts/post.astro
 title: ""
 description: ""
 tags: []
 author: Shota or Shiori
+authorTwitter: xioota
 thumbnail: /images/posts/grand_canyon/antelope_canyon.jpg
 date: ${date.toISOString()}
 ---`

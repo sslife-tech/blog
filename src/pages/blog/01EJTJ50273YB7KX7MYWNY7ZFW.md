@@ -2,7 +2,7 @@
 layout: $/layouts/post.astro
 title: UniFiで始める自宅ネットワーク入門
 description: "今年に入ってからスイッチや防犯カメラなど、ものすごい勢いでUniFi製品を買い揃えています。どのUniFi製品をどう使っているのかをご紹介します。"
-tags: ["UniFi", "自宅環境"]
+tags: ["UniFi"]
 author: Shota
 authorTwitter: xioota
 image: /images/posts/unifi_01.jpg
