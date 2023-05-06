@@ -18,7 +18,7 @@ description: ""
 tags: []
 author: Shota or Shiori
 authorTwitter: xioota
-thumbnail: /images/posts/grand_canyon/antelope_canyon.jpg
+image: /images/posts/cambly.png
 date: ${date.toISOString()}
 ---`
 
