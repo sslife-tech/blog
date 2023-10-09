@@ -12,7 +12,7 @@
 
 </script>
 {#if $isSearchVisible}
-    <div class="modal__backdrop" on:click={dismissModal} on:keydown={handleEsc} transition:fade></div>
+    <div class="modal__backdrop" on:click={dismissModal} on:keydown={handleEsc} transition:fade role="button" tabindex="0"></div>
     <div class="modal">
         <div class="modal__cnt" transition:fly="{{ y: 200, duration: 300 }}">
             <Search />

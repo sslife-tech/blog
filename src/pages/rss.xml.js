@@ -4,7 +4,7 @@ import { SITE } from '../config'
 const allPosts = import.meta.glob('./**/*.md', { eager: true })
 const sortedPosts = Object.values(allPosts).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-export const get = () => rss({
+export const GET = () => rss({
     // `<title>` field in output xml
     title: `${SITE.name} | Blog`,
     // `<description>` field in output xml
