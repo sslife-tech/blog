@@ -5,7 +5,7 @@ description: "積水ハウスの建売住宅の電子錠や照明をIoT化した
 tags: ["スマートホーム", "積水ハウス"]
 author: Shota
 authorTwitter: xioota
-image: /images/posts/smarthome/sekisuihouse-logo.jpg
+image: /images/posts/smarthome/status.jpg
 date: 2024-08-22T04:08:05.755Z
 ---
 
